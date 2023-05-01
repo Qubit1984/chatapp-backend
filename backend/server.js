@@ -5,7 +5,7 @@ const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
-const path = require("path");
+//const path = require("path");
 
 dotenv.config();
 
@@ -20,6 +20,8 @@ app.use(express.json());
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
+
+/*
 //--------------------------deployment------------------------------
 
 const __dirname1 = path.resolve();
@@ -37,6 +39,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // --------------------------deployment------------------------------
+*/
 app.use(notFound);
 app.use(errorHandler);
 
